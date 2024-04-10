@@ -1,10 +1,13 @@
 name: "Check for update on Mikrotik website and generate a PR if necessary"
 
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: "0 4 * * *"
-
+  # workflow_dispatch:
+  # schedule:
+  #   - cron: "0 4 * * *"
+  push:
+    branches:
+      - "master"
+      
 jobs:
   routeros:
     name: "Build & Test images"
